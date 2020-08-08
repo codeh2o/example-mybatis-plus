@@ -2,7 +2,7 @@ spring:
   profiles:
     active: dev,female
   datasource:
-    url: jdbc:mysql://192.168.199.128:3306/mp
+    url: jdbc:mysql://192.168.199.128:3306/mp2
     type: com.zaxxer.hikari.HikariDataSource
     username: root
     password: 123456
@@ -30,6 +30,14 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath*:xml/*Mapper.xml
+  global-config:
+    db-config:
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+      logic-delete-field: deleted
+      id-type: assign_id
+      table-prefix: "ai_"
+
 
 
 
